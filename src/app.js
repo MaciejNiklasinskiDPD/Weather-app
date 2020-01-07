@@ -13,6 +13,9 @@ const weatherProvider = require('./utils.js/weatherProvider');
 // Initialize instance of the express app.
 const app = express();
 
+// Get heroku port number or fall back to default 3000 if app runs locally.
+const port = process.env.PORT || 3000;
+
 // Get paths to directory containing static resources
 const pagesPath = path.join(__dirname, '../resources/pages');
 const scriptsPath = path.join(__dirname, '../resources/scripts');
@@ -125,6 +128,6 @@ app.get('*', (request, response) => {
 });
 
 // Starts the server on port 3000.
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });

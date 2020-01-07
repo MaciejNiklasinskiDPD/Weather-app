@@ -54,5 +54,5 @@ function getWhetherRequestURL() {
     const address = document.getElementById('address').value;
 
     // Return constructed whether 
-    return `${document.URL}weather?address=${address}`;
+    return `/weather?address=${address}`;
 }
